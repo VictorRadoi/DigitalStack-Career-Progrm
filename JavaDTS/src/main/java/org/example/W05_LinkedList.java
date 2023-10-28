@@ -24,26 +24,6 @@ public class W05_LinkedList {
             length = 1;
         }
 
-        public void printList() {
-            Node temp = head;
-            while (temp != null) {
-                System.out.println(temp.value);
-                temp = temp.next;
-            }
-        }
-
-        public void getHead() {
-            System.out.println("Head: " + head.value);
-        }
-
-        public void getTail() {
-            System.out.println("Tail: " + tail.value);
-        }
-
-        public void getLength() {
-            System.out.println("Length: " + length);
-        }
-
         public void append(int value) {
             Node newNode = new Node(value);
             if (length == 0) {
@@ -157,9 +137,37 @@ public class W05_LinkedList {
                 temp = after;
             }
         }
+
+        public Node findMiddle() {
+            if (head == null) {
+                return null;
+            }
+
+            Node fastPointer = head;
+            Node slowPointer = head;
+
+            while (fastPointer != null && fastPointer.next != null) {
+                slowPointer = slowPointer.next;
+                fastPointer = fastPointer.next.next;
+            }
+
+            return slowPointer;
+        }
     }
 
     public static void main(String[] args) {
-        new LinkedList(4);
+        LinkedList myLinkedList = new LinkedList(4);
+        myLinkedList.append(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
+
+        Node middle = myLinkedList.findMiddle();
+        if (middle != null) {
+            System.out.println("Middle: " + middle.value);
+        } else {
+            System.out.println("List is empty.");
+        }
     }
 }
