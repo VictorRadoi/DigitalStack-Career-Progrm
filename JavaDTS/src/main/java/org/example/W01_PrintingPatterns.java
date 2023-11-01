@@ -1,6 +1,6 @@
 package org.example;
 
-public class W02_PrintingPatterns {
+public class W01_PrintingPatterns {
     public static void trianglePattern1(int n) {
         int count = 0;
         for (int i = 1; i <= n; i++) {

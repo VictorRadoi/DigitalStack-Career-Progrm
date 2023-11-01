@@ -1,6 +1,6 @@
 package org.example;
 
-public class W03_Arrays {
+public class W01_Arrays {
     public static boolean containsDuplicate(int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {
             for (int j = i + 1; j < numbers.length; j++) { // Change i++ to j++

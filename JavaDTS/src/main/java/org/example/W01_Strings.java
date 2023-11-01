@@ -1,6 +1,6 @@
 package org.example;
 
-public class W04_Strings {
+public class W01_Strings {
     public static void reverseString(char[] string) {
         int left = 0;
         int right = string.length - 1;

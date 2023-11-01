@@ -1,6 +1,6 @@
 package org.example;
 
-public class W05_LinkedList {
+public class W01_LinkedList {
 
     static class Node {
         int value;
@@ -152,6 +152,16 @@ public class W05_LinkedList {
             }
 
             return slowPointer;
+        }
+
+        public boolean hasCycle() {
+            if (head == tail) return false;
+            else if (tail.next == head) return true;
+            while (head != head.next) {
+                if (head.next == null || head.next.next == null || head.next.next.next == null) return false;
+                head = head.next;
+            }
+            return true;
         }
     }
 
